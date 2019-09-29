@@ -34,7 +34,6 @@ function eventListeners () {
      questions.forEach(function(question){
           // read the correct answer 
           correctAnswer = question.correct_answer;
-
           // inject the correct answer in the possible answers
           let possibleAnswers = question.incorrect_answers;
           possibleAnswers.splice( Math.floor( Math.random() * 3 ), 0, correctAnswer );
@@ -59,7 +58,7 @@ function eventListeners () {
           possibleAnswers.forEach(function(answer) {
                const answerHTML = document.createElement('li');
                answerHTML.classList.add('col-12', 'col-md-5');
-               answerHTML.textContent = answer;
+               answerHTML.innerHTML = answer;
                // attach an event click the answer is clicked
                answerHTML.onclick = selectAnswer;
                answerDiv.appendChild(answerHTML);
