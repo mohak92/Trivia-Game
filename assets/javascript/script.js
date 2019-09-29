@@ -1,12 +1,39 @@
 let correctAnswer,
      correctNumber = (localStorage.getItem('quiz_game_correct') ? localStorage.getItem('quiz_game_correct') : 0),
      incorrectNumber = (localStorage.getItem('quiz_game_incorrect') ? localStorage.getItem('quiz_game_incorrect') : 0);
+var countDown = 16;
+var intervalId;
 
 document.addEventListener('DOMContentLoaded', function() {
     loadQuestion();
 
     eventListeners();
+
+    run();
 });
+
+function run() {
+     clearInterval(intervalId);
+     intervalId = setInterval(decrement, 1000);
+   }
+
+function decrement() {
+
+     //  Decrease number by one.
+     countDown--;
+
+     //  Show the number in the #show-number tag.
+     const countDownDisp = document.createElement('h3');
+     document.getElementById("timer").innerHTML = "";
+     countDownDisp.innerHTML = "Time remaining to answer this question: " + countDown;
+     document.querySelector('#timer').appendChild(countDownDisp);
+
+     //  Once number hits zero...
+     if (countDown  === 0) {
+          document.getElementById("app").innerHTML = "";
+          loadQuestion();
+   }
+}
 
 function eventListeners () {
      document.querySelector('#check-answer').addEventListener('click', validateAnswer);
@@ -16,6 +43,7 @@ function eventListeners () {
 
 // loads a new question from an API
  function loadQuestion(){
+     countDown = 16;
      const url = 'https://opentdb.com/api.php?amount=1';
      fetch(url)
           .then(data => data.json())
@@ -34,6 +62,7 @@ function eventListeners () {
      questions.forEach(function(question){
           // read the correct answer 
           correctAnswer = question.correct_answer;
+          console.log(correctAnswer);
           // inject the correct answer in the possible answers
           let possibleAnswers = question.incorrect_answers;
           possibleAnswers.splice( Math.floor( Math.random() * 3 ), 0, correctAnswer );
