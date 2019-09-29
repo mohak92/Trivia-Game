@@ -1,3 +1,5 @@
+var correctAnswer;
+
 document.addEventListener("DOMContentLoaded", function(){
     loadQuestion();
 });
@@ -15,5 +17,16 @@ var loadQuestion = function() {
 }
 
 function displayQuestions(questions){
-    console.log(questions);
+    //var questionsToDisp = $('<div>');
+   // quastionsToDisp.addClass('col-12');
+
+    for(var i = 0; i < questions.length;i++){
+        correctAnswer = questions[i].correct_answer;
+
+        let possibleAnswers = questions[i].incorrect_answers;
+        possibleAnswers.splice( Math.floor( Math.random() * 3 ), 0, correctAnswer);
+
+        console.log(possibleAnswers);
+        console.log(questions[i]);
+    }
 }
