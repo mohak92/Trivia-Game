@@ -2,6 +2,7 @@ body {
     background-color: #ecf5ff;;
 }
 .container-questions {
+    margin-top: 15%;
     background-color: #FFFFFF;
     padding: 2rem;
 }
@@ -31,4 +32,10 @@ p.category {
 .btn-danger {
     color: white!important;
     font-size: 1.2rem;
+}
+
+@media screen and (max-width: 640px) {
+    .container-questions {
+        margin-top: 0%;
+    }
 }
