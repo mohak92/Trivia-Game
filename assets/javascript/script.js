@@ -45,8 +45,8 @@ function eventListeners () {
                <div class="row justify-content-between heading">
                     <p class="category">Category:  ${question.category}</p>
                     <div class="totals">
-                         <span class="badge badge-success">${correctNumber}</span>
-                         <span class="badge badge-danger">${incorrectNumber}</span>
+                         <span class="badge badge-success">Correct: ${correctNumber}</span>
+                         <span class="badge badge-danger">Wrong: ${incorrectNumber}</span>
                     </div>
                </div>
                <h2 class="text-center">${question.question}
