@@ -17,6 +17,12 @@ To play <a href ="https://mohak92.github.io/Trivia-Game/">Click here</a>
 </ul>
 </div>
 <div>
+<h3>Local Workspace Setup</h3>
+  <ul>
+    <li>Clone this repository onto your local machine </li>
+    <li>Navigate to project directory </li>
+    <li> Open index.html </li>
+  </ul>
 <h3>Compatibility:</h3>
 You can play this game on any device.
 </div>
