@@ -1,6 +1,7 @@
 # Trivia-Game
 <h2>Question and Answers From <a href ="https://opentdb.com">Open Trivia Database</a></h2>
-This is a Trivia game where you answer multiple choice or true/false questions. You can keep a track on how many you answered right or wrong.
+<h3>Overview</h3>
+This application will test your general knowledge. A Trivia game where you answer multiple choice or true/false questions. You can keep a track on how many you answered right or wrong.
 To play <a href ="https://mohak92.github.io/Trivia-Game/">Click here</a>
 <div>
 <h3>How to play ?</h3>
